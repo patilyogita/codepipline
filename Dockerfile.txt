@@ -1,8 +1,12 @@
-# syntax=docker/dockerfile:1
-   
-FROM node:18-alpine
-WORKDIR /app
-COPY . .
-RUN yarn install --production
-CMD ["node", "src/index.js"]
-EXPOSE 3000
+FROM centos:latest
+MAINTAINER patilyogita5563@gmail.com
+RUN yum install -y httpd \
+ zip\
+ unzip
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page24/phothogenic.zip /var/www/html/
+WORKDIR /var/www/html/
+RUN unzip phothogenic.zip
+RUN cp -rvf phothogenic/* .
+RUN rm -rf phothogenic phothogenic.zip
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+EXPOSE 80
