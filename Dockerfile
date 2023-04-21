@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos
 MAINTAINER patilyogita5563@gmail.com
 #RUN yum install httpd -y
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
