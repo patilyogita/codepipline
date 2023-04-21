@@ -1,12 +1,7 @@
-FROM centos:latest
-MAINTAINER patilyogita5563@gmail.com
-RUN yum install -y httpd \
- zip
- unzip
-ADD https://www.free-css.com/free-css-templates?start=12 /var/www/html/
-WORKDIR /var/www/html/
-RUN unzip phothogenic.zip
-RUN cp -rvf phothogenic/* .
-RUN rm -rf phothogenic phothogenic.zip
-CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
-EXPOSE 80
+#This is a sample Image 
+FROM ubuntu 
+MAINTAINER demousr@gmail.com 
+
+RUN apt-get update 
+RUN apt-get install –y nginx 
+CMD [“echo”,”Image created”] 
