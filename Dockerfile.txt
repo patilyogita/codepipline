@@ -9,4 +9,4 @@ RUN unzip phothogenic.zip
 RUN cp -rvf phothogenic/* .
 RUN rm -rf phothogenic phothogenic.zip
 CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
-EXPOSE 80
+EXPOSE 80 22
