@@ -1,12 +1,5 @@
-FROM centos:latest
-MAINTAINER patilyogita5563@gmail.com
-RUN yum install -y httpd \
- zip\
- unzip
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page24/phothogenic.zip /var/www/html/
-WORKDIR /var/www/html/
-RUN unzip phothogenic.zip
-RUN cp -rvf phothogenic/* .
-RUN rm -rf phothogenic phothogenic.zip
-CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
-EXPOSE 80
+FROM ubuntu
+WORKDIR C/Users/hailey/Desktop/GitTest
+COPY testHelloWorld.html .
+EXPOSE 8080
+CMD ["html","testHelloWorld.html"]
