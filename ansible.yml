@@ -1,6 +1,8 @@
-hosts: all
-become: true
-tasks:
+---
+- name: Playbook
+  hosts: all
+  become: true
+  tasks:
     - name: create new deplyment
       command: kubectl apply -f /home/ubuntu/Deployment.yml
     - name: create new service
