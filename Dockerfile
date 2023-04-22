@@ -1,17 +1,11 @@
-FROM centos
-MAINTAINER patilyogita5563@gmail.com
-#RUN apt install httpd -y
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
-WORKDIR /var/www/html/
-#RUN apt install -y httpd 
-RUN unzip -t photogenic.zip
-RUN cp -rvf photogenic/* .
-RUN rm -rf photogenic photogenic.zip
-CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+# create new
+FROM ubuntu
+MAINTAINER ServerWorld <admin@srv.world>
+
+RUN apt-get update
+RUN apt-get -y install tzdata
+RUN apt-get -y install apache2
+RUN echo "Dockerfile Test on Apache2" > /var/www/html/index.html
+
 EXPOSE 80
-#FROM ubuntu:14.04
-
-#MAINTAINER William E. <william@localhost>
-
-#RUN touch ~/file.txt
-
+CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
