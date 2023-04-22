@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
     name: mrdevops
     labels:
-        app:medevops
+        app: medevops
     spec:
       ports:
         - port: 8080
